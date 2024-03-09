@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Daisy UI end -->
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Feather Icons end -->
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 border-b border-[#9e9e9e]">
+      <div class="flex-none">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52" data-theme="dim">
+            <li>
+              <a href="#"><i data-feather="home" style="width: 18px"></i>Home</a>
+            </li>
+            <li>
+              <details class="dropdown-bottom">
+                <summary class="font-semibold"><i data-feather="grid" style="width: 18px"></i>Category</summary>
+                <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                  <li><a href="category.html">All</a></li>
+                  <li><a href="category.html">Learning</a></li>
+                  <li><a href="category.html">Work</a></li>
+                  <li><a href="category.html">Personal</a></li>
+                  <li><a href="category.html">Favourite</a></li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <a href="history.html"><i data-feather="clock" style="width: 18px"></i>History</a>
+            </li>
+            <li>
+              <a href="history.html"><i data-feather="check-square" style="width: 18px"></i>Completed</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex-1 navbar-start md:ml-[5rem]">
+        <p class="ml-2 text-xl font-semibold">To-Do Lists</p>
+      </div>
+
+      <!-- Navbar Large  -->
+      <ul class="-mr-[18.5%] hidden md:flex gap-8">
+        <li class=""><a href="#" class="hover:text-white hover:border-b transition-all duration-150 pb-1 ease-in">Home</a></li>
+        <li class="">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="m-1">Categories</div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52" data-theme="dim">
+              <li><a href="category.html">All</a></li>
+              <li><a href="category.html">Study</a></li>
+              <li><a href="category.html">Work</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class=""><a href="history.html" class="hover:text-white hover:border-b transition-all duration-150 pb-1 ease-in">History</a></li>
+        <li class=""><a href="history.html" class="hover:text-white hover:border-b transition-all duration-150 pb-1 ease-in">Completed</a></li>
+      </ul>
+      <!-- Navbar Large End -->
+      <div class="flex-none"></div>
+      <div class="navbar-end md:mr-[5rem]">
+        <a class="btn">LOGIN</a>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <main class="p-5 pt-10 flex flex-col gap-5 md:flex-row justify-center">
+      <div id="card" class="bg-[#b8c0ff] relative text-black p-2 md:px-2 md:py-5 rounded md:w-96 flex items-center gap-4">
+        <a href="" class="absolute right-2 top-1"><i data-feather="x" style="width: 18px"></i></a>
+        <div class="status flex items-center ml-2">
+          <input type="checkbox" class="checkbox checkbox-success border-black peer checked:peer:text-white" />
+        </div>
+        <div class="task">
+          <p class="font-semibold peer">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque, placeat.</p>
+          <small class="date text-[12px]">Last </small>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <button class="btn fixed px-1 rounded-full bottom-[8%] right-10 bg-[#736ced] hover:bg-[#665fe4] transition-all duration-100 ease-in md:bottom-36 md:right-36" onclick="my_modal_3.showModal()">
+        <i data-feather="plus" style="width: 40px; stroke: aliceblue"></i>
+      </button>
+
+      <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <form action="" method="post" class="pt-8">
+            <input type="text" placeholder="Input new task here" class="input input-bordered w-full max-w-xs mb-2" />
+            <select class="select select-bordered w-full max-w-xs mb-2">
+              <option disabled selected>Select a category</option>
+              <option>Study</option>
+              <option>Work</option>
+            </select>
+            <input type="date" placeholder="Input new task here" class="input input-bordered w-full max-w-xs mb-3" />
+          </form>
+          <form method="dialog">
+            <button class="btn btn-sm btn-primary">Submit</button>
+          </form>
+        </div>
+      </dialog>
+      <!-- Modal end -->
+    </main>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
